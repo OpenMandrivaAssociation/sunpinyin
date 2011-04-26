@@ -53,7 +53,7 @@ This package contains all necessary files to compile or develop
 programs/libraries that use %{name}.
 
 %prep
-%setup -qDT
+%setup -q
 %patch0 -p1
 cp %{SOURCE1} raw
 cp %{SOURCE2} raw
