@@ -1,0 +1,22 @@
+diff -Naur sunpinyin-2.0.3.orig/src/ime-core/ic_history.cpp sunpinyin-2.0.3/src/ime-core/ic_history.cpp
+--- sunpinyin-2.0.3.orig/src/ime-core/ic_history.cpp	2012-09-13 11:41:13.292723709 +0400
++++ sunpinyin-2.0.3/src/ime-core/ic_history.cpp	2012-09-13 18:29:50.623360232 +0400
+@@ -42,6 +42,7 @@
+ #include <fcntl.h>
+ #include <stdio.h>
+ #include <stdint.h>
++#include <unistd.h>
+ #include <cassert>
+ #include <sys/stat.h>
+ #include <sys/types.h>
+diff -Naur sunpinyin-2.0.3.orig/src/lexicon/genPYT.cpp sunpinyin-2.0.3/src/lexicon/genPYT.cpp
+--- sunpinyin-2.0.3.orig/src/lexicon/genPYT.cpp	2012-09-13 11:41:13.291723676 +0400
++++ sunpinyin-2.0.3/src/lexicon/genPYT.cpp	2012-09-13 18:30:01.419714523 +0400
+@@ -37,6 +37,7 @@
+ 
+ #include <locale.h>
+ #include <stdlib.h>
++#include <unistd.h>
+ 
+ #include "pytrie.h"
+ #include "pytrie_gen.h"

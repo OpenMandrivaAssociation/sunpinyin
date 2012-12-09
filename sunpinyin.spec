@@ -1,7 +1,7 @@
 Name: sunpinyin
 Summary: A statistical language model based Chinese input method
 Version: 2.0.3
-Release: %mkrel 1
+Release: %mkrel 3
 Group: System/Internationalization
 License: LGPLv2+
 URL: http://code.google.com/p/sunpinyin
@@ -9,7 +9,7 @@ Source0: http://sunpinyin.googlecode.com/files/%{name}-%{version}.tar.gz
 Source1: http://open-gram.googlecode.com/files/lm_sc.t3g.arpa.tar.bz2
 Source2: http://open-gram.googlecode.com/files/dict.utf8.tar.bz2
 Patch0: http://sunpinyin.googlecode.com/files/force-switch-updated.patch
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
+Patch1: sunpinyin-2.0.3-unistd.patch
 BuildRequires: sqlite3-devel
 BuildRequires: scons
 
@@ -55,6 +55,7 @@ programs/libraries that use %{name}.
 %prep
 %setup -q
 %patch0 -p1
+%patch1 -p1
 cp %{SOURCE1} raw
 cp %{SOURCE2} raw
 
@@ -63,24 +64,24 @@ cp %{SOURCE2} raw
 scons --prefix=%_prefix --libdir=%_libdir --libdatadir=%_datadir
 
 %install
-rm -rf %{buildroot}
 %setup_compile_flags
 scons install --prefix=%_prefix --libdir=%_libdir --libdatadir=%_datadir --install-sandbox=%{buildroot}
 
-%clean
-rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root)
 %_datadir/sunpinyin
 
 %files -n %libname
-%defattr(-,root,root)
 %_libdir/*.so.%major
 %_libdir/*.so.%major.*
 
 %files -n %develname
-%defattr(-,root,root)
 %_libdir/*.so
 %_libdir/pkgconfig/*.pc
 %_includedir/*
+
+
+%changelog
+* Tue Apr 26 2011 Funda Wang <fwang@mandriva.org> 2.0.3-1mdv2011.0
++ Revision: 659316
+- import sunpinyin
+
