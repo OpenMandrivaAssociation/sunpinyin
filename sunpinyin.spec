@@ -1,7 +1,7 @@
 Name: sunpinyin
 Summary: A statistical language model based Chinese input method
 Version: 2.0.3
-Release: 10
+Release: 11
 Group: System/Internationalization
 License: LGPLv2+
 URL: http://code.google.com/p/sunpinyin
