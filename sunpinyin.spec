@@ -4,7 +4,7 @@ Version: 2.0.3
 Release: 12
 Group: System/Internationalization
 License: LGPLv2+
-URL: http://code.google.com/p/sunpinyin
+URL: https://code.google.com/p/sunpinyin
 Source0: http://sunpinyin.googlecode.com/files/%{name}-%{version}.tar.gz
 Source1: http://open-gram.googlecode.com/files/lm_sc.t3g.arpa.tar.bz2
 Source2: http://open-gram.googlecode.com/files/dict.utf8.tar.bz2
